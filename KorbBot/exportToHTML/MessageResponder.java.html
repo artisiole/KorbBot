@@ -1,0 +1,638 @@
+<html>
+<head>
+<title>MessageResponder.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MessageResponder.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">net.dv8tion.jda.core.events.message.MessageReceivedEvent</span><span class="s0">;</span>
+import <span class="s1">net.dv8tion.jda.core.hooks.ListenerAdapter</span><span class="s0">;</span>
+import <span class="s1">java.util.Random</span><span class="s0">;</span>
+import <span class="s1">java.util.concurrent.TimeUnit</span><span class="s0">;</span>
+public class <span class="s1">MessageResponder </span><span class="s0">extends </span><span class="s1">ListenerAdapter {</span>
+    <span class="s0">public void </span><span class="s1">onMessageReceived(MessageReceivedEvent event) {</span>
+        Random rand = <span class="s0">new </span><span class="s1">Random()</span><span class="s0">;</span>
+        <span class="s1">String name = event.getAuthor().getName()</span><span class="s0">;</span>
+        <span class="s1">String message = event.getMessage().getContentRaw()</span><span class="s0">;</span>
+        if<span class="s1">(message.startsWith(</span><span class="s2">&quot;;goaway&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(name + <span class="s2">&quot; ***BEGONE***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;epicpizzacat&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/505798217238315028/image0.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;spam&quot;</span><span class="s1">)){</span>
+            <span class="s0">int </span><span class="s1">spamnum = rand.nextInt(</span><span class="s3">100</span><span class="s1">) + </span><span class="s3">10</span><span class="s0">;</span>
+            while<span class="s1">(spamnum &gt; </span><span class="s3">0</span><span class="s1">){</span>
+                <span class="s0">int </span><span class="s1">wts = rand.nextInt(</span><span class="s3">10</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+                if<span class="s1">(wts == </span><span class="s3">1</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;Spam&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">2</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;:die:&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">3</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;https://www.youtube.com/watch?v=quC2lR4HVXk&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">4</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;:potable_water:&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">5</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;polygon donut&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">6</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;¯|_(ツ)_/¯&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">7</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;( ͡° ͜ʖ ͡°)&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">8</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;oops i dropped my apple&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">9</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;zambadia&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                <span class="s0">if</span><span class="s1">(wts == </span><span class="s3">10</span><span class="s1">) {</span>
+                    event.getTextChannel().sendMessage(<span class="s2">&quot;https://www.youtube.com/watch?v=LDU_Txk06tM&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">}</span>
+                spamnum = spamnum - <span class="s3">1</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;catroulette&quot;</span><span class="s1">)){</span>
+            <span class="s0">int </span><span class="s1">croul = rand.nextInt(</span><span class="s3">10</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            if<span class="s1">(croul == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503035009326645258/sush.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503035006747148308/MMUQSUs.png&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503035007162515476/RING_CAT.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">4</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503035005514153985/POTATOkinishes.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">5</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503035001177374736/maxresdefault.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">6</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503034998677569539/images.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">7</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503034996907573258/images_1.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">8</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503034994856296463/download.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">9</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/503034992625057794/download_1.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(croul == </span><span class="s3">10</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;https://cdn.discordapp.com/attachments/503002490233683981/505798217238315028/image0.jpg&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;conspeed&quot;</span><span class="s1">)){</span>
+            <span class="s0">long </span><span class="s1">startTime = System.nanoTime()</span><span class="s0">;</span>
+            <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;measuring...1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;measuring...2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;measuring...3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            long <span class="s1">endTime = System.nanoTime()</span><span class="s0">;</span>
+            long <span class="s1">timeElapsted = endTime - startTime</span><span class="s0">;</span>
+            long <span class="s1">milliTime = timeElapsted / </span><span class="s3">1000000</span><span class="s0">;</span>
+            <span class="s1">String print = String.valueOf(milliTime)</span><span class="s0">;</span>
+            <span class="s1">event.getTextChannel().sendMessage(print + </span><span class="s2">&quot; ms&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;randomspook&quot;</span><span class="s1">)){</span>
+            <span class="s0">int </span><span class="s1">spook = rand.nextInt(</span><span class="s3">5</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            if<span class="s1">(spook == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;boo&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(spook == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                try <span class="s1">{</span>
+                    Thread.sleep(<span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">catch </span><span class="s1">(InterruptedException e) {</span>
+                    e.printStackTrace()<span class="s0">;</span>
+                <span class="s1">}</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                try <span class="s1">{</span>
+                    Thread.sleep(<span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">catch </span><span class="s1">(InterruptedException e) {</span>
+                    e.printStackTrace()<span class="s0">;</span>
+                <span class="s1">}</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                try <span class="s1">{</span>
+                    Thread.sleep(<span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">catch </span><span class="s1">(InterruptedException e) {</span>
+                    e.printStackTrace()<span class="s0">;</span>
+                <span class="s1">}</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;doot doot&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                try <span class="s1">{</span>
+                    Thread.sleep(<span class="s3">2000</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">} </span><span class="s0">catch </span><span class="s1">(InterruptedException e) {</span>
+                    e.printStackTrace()<span class="s0">;</span>
+                <span class="s1">}event.getTextChannel().sendMessage(</span><span class="s2">&quot;did i scare you&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(spook == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;skeletons&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(spook == </span><span class="s3">4</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;it ain't halloween&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(spook == </span><span class="s3">5</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;christmas is far away&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;loop&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;time for loop brother&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;yeet&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;yoot&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;referencepgd&quot;</span><span class="s1">)){</span>
+            <span class="s0">int </span><span class="s1">pgdref = rand.nextInt(</span><span class="s3">10</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            if<span class="s1">(pgdref == </span><span class="s3">1</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;the ultimate yeet&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">2</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;i want to jump into a color changing pool&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">3</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;this is so sad bongo cat play the ali a intro&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">4</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;dab for 10 minutes please&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">5</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;a bagel is just a t posing donut&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">6</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;my top 5 shapes are imaginary&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">7</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;donutception&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">8</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;put the banana in bowl&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">9</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;HEY GAMERS&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(pgdref == </span><span class="s3">10</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;meow meow beans are yummy&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;egg&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;:egg:&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.contains(</span><span class="s2">&quot;stop screaming&quot;</span><span class="s1">) || message.contains(</span><span class="s2">&quot;stop yelling&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">((message.contains(</span><span class="s2">&quot;i'm thirsty&quot;</span><span class="s1">)) || (message.contains(</span><span class="s2">&quot;im thirsty&quot;</span><span class="s1">))){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;then get a drink you mug&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.contains(</span><span class="s2">&quot;have a nice day&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;me too&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.contains(</span><span class="s2">&quot;i gtg&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;you too&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">((message.contains(</span><span class="s2">&quot;i'm hungry&quot;</span><span class="s1">)) || (message.contains(</span><span class="s2">&quot;im hungry&quot;</span><span class="s1">))){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;hi hungry i'm donutbot2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.contains(</span><span class="s2">&quot;i'm not hungry&quot;</span><span class="s1">)) {</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;hi not hungry i'm donutbot2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.contains(</span><span class="s2">&quot;depsacito&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;doritos&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.contains(</span><span class="s2">&quot;this is so sad alexa play despacito&quot;</span><span class="s1">)){</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;***despacito starts playing***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if</span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;slots&quot;</span><span class="s1">)){</span>
+            <span class="s0">int </span><span class="s1">slts1 = rand.nextInt(</span><span class="s3">3</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            int <span class="s1">slts2 = rand.nextInt(</span><span class="s3">3</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            int <span class="s1">slts3 = rand.nextInt(</span><span class="s3">3</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            if<span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 1 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Won A Snake :snake:&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 1 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 2 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 1 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 1 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 2 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 2 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 2 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Won A Snake :snake:&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 1 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 3 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 1 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 1 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 3 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 3 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 3 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Won A Snake :snake:&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;1 2 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">1</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 2 1&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 2 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 1 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">1 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 1 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 3 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 2 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 2 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">2 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">3</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;2 3 3&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if</span><span class="s1">(slts1 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts2 == </span><span class="s3">3 </span><span class="s1">&amp;&amp; slts3 == </span><span class="s3">2</span><span class="s1">){</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;3 3 2&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lost&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;gtav&quot;</span><span class="s1">)) {</span>
+            <span class="s0">int </span><span class="s1">gtav = rand.nextInt(</span><span class="s3">15</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+
+            if <span class="s1">(gtav == </span><span class="s3">1</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you exploded a car ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">2</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you sneezed on a cat that's illegal ***busted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">3</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao on your mission someone said #jumpoffthehelicopterchallengeoryougay and you ain't gay ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">4</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you got stoned at a bar ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">5</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you put a c4 in a police officer's office ***busted and wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">6</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao at the gym you picked up a 2lb weight and you broke your back ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">7</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you ate pant ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">8</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you got fat ***busted your pants***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">9</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you coughed on a police officer's donut oddly shaped like a polygon ***busted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">10</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you got free merch from pgd ***mission completed***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">11</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you ate too much lasanga ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">12</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you drank all the shampoo in the house ***mission complete***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">13</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you screeched at the president ***busted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">14</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you dropped salami ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(gtav == </span><span class="s3">15</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;lmao you spent $800 on hamilton tickets and it got canceled  ***wasted***&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;avocado&quot;</span><span class="s1">)) {</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;:avocado:&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;vs&quot;</span><span class="s1">)) {</span>
+            <span class="s0">int </span><span class="s1">pnum = rand.nextInt(</span><span class="s3">100</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            int <span class="s1">bnum = rand.nextInt(</span><span class="s3">100</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            if <span class="s1">(pnum &gt; bnum) {</span>
+                event.getTextChannel().sendMessage(name + <span class="s2">&quot; has &quot; </span><span class="s1">+ pnum + </span><span class="s2">&quot; points. DonutBot2 has &quot; </span><span class="s1">+ bnum + </span><span class="s2">&quot; points.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Win&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(bnum &gt; pnum) {</span>
+                event.getTextChannel().sendMessage(name + <span class="s2">&quot; has &quot; </span><span class="s1">+ pnum + </span><span class="s2">&quot; points. DonutBot2 has &quot; </span><span class="s1">+ bnum + </span><span class="s2">&quot; points.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;You Lose&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(bnum == pnum) {</span>
+                event.getTextChannel().sendMessage(name + <span class="s2">&quot; has &quot; </span><span class="s1">+ pnum + </span><span class="s2">&quot; points. DonutBot2 has &quot; </span><span class="s1">+ bnum + </span><span class="s2">&quot; points.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(</span><span class="s2">&quot;Tie&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;donut&quot;</span><span class="s1">)) {</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;:regional_indicator_d: :regional_indicator_o: :regional_indicator_n: :regional_indicator_u: :regional_indicator_t: &quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;press f to pay respects&quot;</span><span class="s1">)) {</span>
+            event.getTextChannel().sendMessage(<span class="s2">&quot;f&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;diceroll&quot;</span><span class="s1">)) {</span>
+            <span class="s0">int </span><span class="s1">r = rand.nextInt(</span><span class="s3">12</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+            if <span class="s1">(r == </span><span class="s3">1</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 1, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">2</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 2, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">3</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 3, You Win.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">4</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 4, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">5</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 5, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">6</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 6, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">7</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 7, You Win.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">8</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 8, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">9</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 9, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">10</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 10, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">11</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 11, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(r == </span><span class="s3">12</span><span class="s1">) {</span>
+                event.getTextChannel().sendMessage(<span class="s2">&quot;You Rolled 12, You Lose.&quot;</span><span class="s1">).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+        }
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;drincc&quot;</span><span class="s1">)) {</span>
+            String response38 = <span class="s2">&quot;time for feast&quot;</span><span class="s0">;</span>
+            <span class="s1">event.getTextChannel().sendMessage(response38).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;potable&quot;</span><span class="s1">)) {</span>
+            String response37 = <span class="s2">&quot;:potable_water:&quot;</span><span class="s0">;</span>
+            <span class="s1">event.getTextChannel().sendMessage(response37).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;roast&quot;</span><span class="s1">)) {</span>
+            <span class="s0">int </span><span class="s1">x = rand.nextInt(</span><span class="s3">11</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+
+            if <span class="s1">(x == </span><span class="s3">1</span><span class="s1">) {</span>
+                String response27 = name + <span class="s2">&quot; looks like a lemon donut&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response27).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">2</span><span class="s1">) {</span>
+                String response28 = name + <span class="s2">&quot; is very not a pleasant person&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response28).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">3</span><span class="s1">) {</span>
+                String response29 = name + <span class="s2">&quot; is not good&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response29).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">4</span><span class="s1">) {</span>
+                String response30 = name + <span class="s2">&quot; can't even look like the despacito spider&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response30).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">5</span><span class="s1">) {</span>
+                String response31 = name + <span class="s2">&quot; has an iq of a doorknob&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response31).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">6</span><span class="s1">) {</span>
+                String response32 = name + <span class="s2">&quot; says ''you too'' when the waiter says ''careful it's hot''.&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response32).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">7</span><span class="s1">) {</span>
+                String response33 = name + <span class="s2">&quot; steals memes&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response33).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">8</span><span class="s1">) {</span>
+                String response34 = name + <span class="s2">&quot; makes the worst lasagna&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response34).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">9</span><span class="s1">) {</span>
+                String response35 = name + <span class="s2">&quot; forgets to chew water&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response35).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">10</span><span class="s1">) {</span>
+                String response36 = name + <span class="s2">&quot; rolls out the tube of chapstick and takes a huge bite&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response36).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(x == </span><span class="s3">11</span><span class="s1">) {</span>
+                String response36 = name + <span class="s2">&quot; only jumps into normal pools and not color changing ones&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response36).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+        }
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;op&quot;</span><span class="s1">)) {</span>
+            <span class="s0">int </span><span class="s1">n = rand.nextInt(</span><span class="s3">25</span><span class="s1">) + </span><span class="s3">1</span><span class="s0">;</span>
+
+
+            if <span class="s1">(n == </span><span class="s3">1</span><span class="s1">) {</span>
+                String response2 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; deserves a donut&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response2).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">2</span><span class="s1">) {</span>
+                String response3 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is not funny&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response3).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">3</span><span class="s1">) {</span>
+                String response4 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; does not deserve a donut&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response4).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">4</span><span class="s1">) {</span>
+                String response5 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is funny&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response5).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">5</span><span class="s1">) {</span>
+                String response6 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is human&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response6).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">6</span><span class="s1">) {</span>
+                String response7 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is not human&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response7).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">7</span><span class="s1">) {</span>
+                String response8 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; deserves a :joy: :ok_hand: :b:&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response8).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">8</span><span class="s1">) {</span>
+                String response9 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; does not deserve a :joy: :ok_hand: :b:&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response9).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">9</span><span class="s1">) {</span>
+                String response10 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is better than the original DonutBot&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response10).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">10</span><span class="s1">) {</span>
+                String response11 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is not better than the original DonutBot&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response11).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">11</span><span class="s1">) {</span>
+                String response12 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; forgot that polygon donut was a youtuber&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response12).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">12</span><span class="s1">) {</span>
+                String response13 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; has a big channel over a million subs&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response13).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">13</span><span class="s1">) {</span>
+                String response14 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; should be admin&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response14).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">14</span><span class="s1">) {</span>
+                String response15 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; should be mod&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response15).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">15</span><span class="s1">) {</span>
+                String response16 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; sang despacito&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response16).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">16</span><span class="s1">) {</span>
+                String response17 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is hungry can we get him some tic tacs&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response17).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">17</span><span class="s1">) {</span>
+                String response18 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; sucks :-(&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response18).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">18</span><span class="s1">) {</span>
+                String response19 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is pretty gud :ok_hand:&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response19).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">19</span><span class="s1">) {</span>
+                String response20 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; IS ACTUALLY EXTREMELY AWESUM :100: :joy: :ok_hand:&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response20).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">20</span><span class="s1">) {</span>
+                String response21 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is out of ideas&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response21).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">21</span><span class="s1">) {</span>
+                String response22 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is a good donut&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response22).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">22</span><span class="s1">) {</span>
+                String response23 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is not a good donut&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response23).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">23</span><span class="s1">) {</span>
+                String response24 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is dead&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response24).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">24</span><span class="s1">) {</span>
+                String response25 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; is alive&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response25).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(n == </span><span class="s3">25</span><span class="s1">) {</span>
+                String response26 = <span class="s2">&quot;i think &quot; </span><span class="s1">+ name + </span><span class="s2">&quot; has alzheim-&quot;</span><span class="s0">;</span>
+                <span class="s1">event.getTextChannel().sendMessage(response26).queue()</span><span class="s0">;</span>
+            <span class="s1">}</span>
+
+
+        }
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;help&quot;</span><span class="s1">)) {</span>
+
+            String response1 = <span class="s2">&quot;current commands: </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;ok gives you an ok </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;op gives you an opinion </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;roast is self explanatory </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;potable sends potable water </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;drincc is a feast </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;diceroll is a dice game </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;donut to donut</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;vs is a game between me and you</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+             <span class="s2">&quot; use ;avocado to avocado </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+             <span class="s2">&quot; use ;gtav is gta v in discord </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+             <span class="s2">&quot; use ;slots to play slots </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;egg to egg </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;referencepgd to make a reference to pgd </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;loop for loops brother </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;catroulette for either a cute cat or a cursed cat </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;goaway to go away </span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+</span>
+            <span class="s2">&quot; use ;spam to spam (only use this in #spam or something)&quot;</span><span class="s0">;</span>
+
+
+            <span class="s1">event.getTextChannel().sendMessage(response1).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+        <span class="s0">if </span><span class="s1">(message.startsWith(</span><span class="s2">&quot;;ok&quot;</span><span class="s1">)) {</span>
+            String response = name + <span class="s2">&quot; is :ok_hand: &quot;</span><span class="s0">;</span>
+            <span class="s1">event.getTextChannel().sendMessage(response).queue()</span><span class="s0">;</span>
+        <span class="s1">}</span>
+
+    }
+}
+</pre>
+</body>
+</html>
