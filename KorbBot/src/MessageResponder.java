@@ -8,11 +8,6 @@ public class MessageResponder extends ListenerAdapter{
     private int leaveCount = 0;
     private int buttonCount = 0;
 
-    public void onServerJoined(GuildJoinEvent event) {
-        Guild guild = event.getGuild();
-        System.out.println("Donutbot just joined a new server! Server name and id: " + guild);
-    }
-
     public void onMessageReceived(MessageReceivedEvent event) {
         Random rand = new Random();
         int gp = 0;
