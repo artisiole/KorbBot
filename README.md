@@ -15,3 +15,5 @@ literally just contains the jda library lol
 
 "res" folder
 no clue tbh
+
+also please ignore out/production and exportToHTML thank you i'm a bad programmer
